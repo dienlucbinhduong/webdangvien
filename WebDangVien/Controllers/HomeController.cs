@@ -35,6 +35,14 @@ namespace WebDangVien.Controllers
             
             return View(model);
         }
+
+        //[HttpGet]
+        //public JsonResult GetData()
+        //{
+        //     var iplCFile = new CFileModel();
+        //     var dv = iplCFile.getAll().FirstOrDefault(x => x.CFileID == 1);
+        //    return Json(dv,JsonRequestBehavior.AllowGet);
+        //}
         //public ActionResult CreateBase64Image(byte[] id)
         //{
         //    byte[] ndHinh = null;
@@ -49,7 +57,12 @@ namespace WebDangVien.Controllers
         //    ViewBag.strPicture = strBase64;
         //    return View(); 
         //}
-
+        public CFile getCFile(int id)
+        {
+             var iplCFile = new CFileModel();
+             var dv = iplCFile.getAll().FirstOrDefault(x => x.CFileID == 1);
+             return dv;
+        }
         public string CreateBase64Image(byte[] CPicture)
         {
             string strBase64 = "";
